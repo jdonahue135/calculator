@@ -1,0 +1,1 @@
+Make an on-screen Calculator using Javascript, HTML and CSS as part of the Odin Project's curriculum (https://www.theodinproject.com/courses/web-development-101/lessons/calculator).
