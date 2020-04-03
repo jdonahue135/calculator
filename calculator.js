@@ -17,6 +17,7 @@ function operate(operator, x, y) {
 
 //Organizes numbers by order of operations
 function format(Numbers) {
+    var result;
     for (each in Numbers) {
         number = Numbers[each];
         operator = number.operator
@@ -43,8 +44,7 @@ function format(Numbers) {
         }
     }
     //resets display
-    Numbers = [];
-    displayNumbers = [];
+    resetData();
     currentNumber = result;
     displayNumbers.push(currentNumber);
 }
@@ -56,15 +56,12 @@ const clear = document.querySelector('input.clear');
 
 function resetData() {
     Numbers= [];
-    total = 0;
     displayNumbers = [];
     currentNumber = '';
-    display.textContent = 0;
 }
 
 // set default display value to 0
 var Numbers= [];
-var total = 0;
 var displayNumbers = [];
 var currentNumber = '';
 
@@ -82,6 +79,7 @@ function populateDisplay() {
     //configure clear button
     clear.addEventListener('click', (e) => {
         resetData();
+        display.textContent = 0;
     })
     
     //configure number buttons
@@ -131,5 +129,4 @@ function valueNumbers(x) {
     }
     display.textContent = displayValue;
 }
-resetData();
 populateDisplay();
