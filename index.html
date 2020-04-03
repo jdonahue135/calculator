@@ -2,24 +2,24 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="height=device-height, initial-scale=1.0">
         <title>Calculator</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body>
-        <h1>Calculator</h1>
+        <h1>Jdonahue135's Calculator</h1>
+        <h2>Made as part of <a href="https://www.theodinproject.com/courses/web-development-101/lessons/calculator">The Odin Project's curriculum</a></h2>
         <div class="calculator">
-            <div class="display">
-                <div id="display">0</div>
-            </div>
-            <div class="operators">
+            <div class="display">0</div>
+            <div class="operator-container">
                 <input class ="operator" value="+" type="submit" id="plus">
                 <input class ="operator" value="-" type="submit" id="minus">
                 <input class ="operator" value="*" type="submit" id="times">
                 <input class ="operator" value="/" type="submit" id="divided-by">
                 <input class ="operator" value="=" type="submit" id="equals">
             </div>
-            <div class="numbers">
+            <input class="clear" value="CE" type="submit">
+            <div class="number-container">
                 <input class="number" value="1" type="submit">
                 <input class="number" value="2" type="submit">
                 <input class="number" value="3" type="submit">
@@ -29,10 +29,11 @@
                 <input class="number" value="7" type="submit">
                 <input class="number" value="8" type="submit">
                 <input class="number" value="9" type="submit">
-                <input class="number" value="0" type="submit">
             </div>
-            <input class="clear" value="CE" type="submit">
+            <input class="zero" value="0" type="submit">
+            <input class="decimal" value="." type="submit">
         </div>
+    <footer>To see more projects by jdonahue135 check out my <a href="https://github.com/jdonahue135">Github page</a></footer>
     </body>
     <script src="calculator.js"></script>
 </html>
