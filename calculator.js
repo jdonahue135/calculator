@@ -54,8 +54,15 @@ const display = document.querySelector('div.display');
 const operators = document.querySelectorAll('input.operator');
 const clear = document.querySelector('input.clear');
 
+function resetData() {
+    Numbers= [];
+    total = 0;
+    displayNumbers = [];
+    currentNumber = '';
+    display.textContent = 0;
+}
+
 // set default display value to 0
-var displayValue = 0;
 var Numbers= [];
 var total = 0;
 var displayNumbers = [];
@@ -74,17 +81,17 @@ function populateDisplay() {
 
     //configure clear button
     clear.addEventListener('click', (e) => {
-        display.textContent = 0;
-        displayValue = 0;
-        Numbers= [];
-        total = 0;
-        displayNumbers = [];
-        currentNumber = '';
+        resetData();
     })
     
     //configure number buttons
     numbers.forEach(number => {
         number.addEventListener('click', (e) => {
+            if (number.value == '.') {
+                if (currentNumber.includes('.')) {
+                    return;
+                }
+            }
             currentNumber = currentNumber + number.value;
             displayNumbers.push(number.value);
             valueNumbers(displayNumbers);
@@ -118,11 +125,11 @@ function populateDisplay() {
 
 //Convert arrays to a string for display
 function valueNumbers(x) {
-    displayValue = x[0];
+    var displayValue = x[0];
     for (y = 1; y < x.length; y++) {
         displayValue = displayValue + x[y];
     }
     display.textContent = displayValue;
 }
-
+resetData();
 populateDisplay();
